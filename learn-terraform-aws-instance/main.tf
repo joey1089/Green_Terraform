@@ -21,9 +21,3 @@ resource "aws_instance" "app_server" {
     Name = "AppServer-Instance"
   }
 }
-
-output "aws_instance" {
-   value = instance_type.instance
-   description = "The type of the aws instance"
-   
-}
