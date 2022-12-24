@@ -10,14 +10,20 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-west-2"
+  region = "us-east-1"
 }
 
 resource "aws_instance" "app_server" {
-  ami           = "ami-830c94e3"
-  instance_type = "t2.micro"
+  ami           = "ami-0574da719dca65348"
+  instance_type = "t2.small"
 
   tags = {
-    Name = "ExampleAppServerInstance"
+    Name = "AppServer-Instance"
   }
+}
+
+output "aws_instance" {
+   value = instance_type.instance
+   description = "The type of the aws instance"
+   
 }
