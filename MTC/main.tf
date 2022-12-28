@@ -26,11 +26,11 @@ resource "docker_container" "nodered_container" {
 }
 
 output "IP-Address" {
-    value = docker_container.nodered_container.ip_address
-    description = "The IP address of the container"
+  value       = docker_container.nodered_container.ip_address
+  description = "The IP address of the container"
 }
 
 output "container-name" {
-    value = docker_container.nodered_container.name
-    description = "The name of the container"
+  value       = docker_container.nodered_container.name
+  description = "The name of the container"
 }
