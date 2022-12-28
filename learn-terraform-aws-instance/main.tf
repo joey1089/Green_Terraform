@@ -32,14 +32,11 @@ resource "aws_instance" "DB_server" {
 }
 
 output "aws_instance-app_server" {
-  value       = aws_instance.app_server.availability_zone
-  description = "Show availability zone of the aws app server"
+  value       = aws_instance.app_server.arn
+  description = "Show arn of the aws app server"
 }
 
 output "aws_instance-DB_Server" {
   value       = aws_instance.DB_server.public_ip
   description = "Show the public IP address of the aws DB server"
-
-
-
 }
