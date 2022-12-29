@@ -22,11 +22,21 @@ resource "aws_instance" "app_server" {
   }
 }
 
-resource "aws_instance" "web_server" {
+resource "aws_instance" "DB_server" {
   ami           = "ami-0d74e3b27c5632a28"
   instance_type = "t2.micro"
 
   tags = {
-    Name = "WebServer-Instance"
+    Name = "DBServer-Instance"
   }
+}
+
+output "aws_instance-app_server" {
+  value       = aws_instance.app_server.arn
+  description = "Show arn of the aws app server"
+}
+
+output "aws_instance-DB_Server" {
+  value       = aws_instance.DB_server.public_ip
+  description = "Show the public IP address of the aws DB server"
 }
