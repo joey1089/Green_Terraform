@@ -11,7 +11,7 @@ terraform {
 provider "aws" {
   region = "us-east-1"
 }
-# ec2 instance with web server
+# ec2 instances of web server
 resource "aws_instance" "web_server" {
   ami           = "ami-0b5eea76982371e91"
   count         = 3
