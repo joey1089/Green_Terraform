@@ -7,16 +7,15 @@ terraform {
     }
   }
 }
-
 # Configure the AWS Provider
 provider "aws" {
   region = "us-east-1"
 }
-
 # ec2 instance with web server
-resource "aws_instance" "web" {
-  ami           = ""
-  instance_type = "t3.micro"
+resource "aws_instance" "web_server" {
+  ami           = "ami-0b5eea76982371e91"
+  count = 3
+  instance_type = "t2.micro"
 
   tags = {
     Name = "web-server"
